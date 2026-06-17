@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Funding Eligibility Resources | SBA Grant Assistance</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    * {
+        font-family: 'Inter', sans-serif;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    .sba-blue { background-color: #002e6d; }
+    .sba-blue-text { color: #002e6d; }
+    .sba-red { background-color: #cc0000; }
+    .sba-red-text { color: #cc0000; }
+    
+    .gradient-hero {
+        background: linear-gradient(135deg, #002e6d 0%, #0052a3 100%);
+    }
+    
+    .btn-primary {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 14px 0 rgba(0, 46, 109, 0.3);
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px 0 rgba(0, 46, 109, 0.4);
+    }
+    
+    .card-hover {
+        transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #cc0000;
+        transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+        width: 100%;
+    }
+    
+    .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+    
+    .mobile-menu.active {
+        max-height: 500px;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .animate-fade-in {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .whatsapp-float {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+    
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+    
+    <!-- Top Bar -->
+    <div class="sba-blue text-white py-2 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-2">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+13322076900" class="hover:text-blue-200 transition">+1 (332) 207-6900</a>
+                </span>
+                <span class="hidden sm:flex items-center gap-2">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:sbagrant.gov00@gmail.com" class="hover:text-blue-200 transition">sbagrant.gov00@gmail.com</a>
+                </span>
+            </div>
+            <div class="text-xs">
+                <i class="fas fa-id-card mr-1"></i> Official Resource Partner
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="sba-blue text-white p-2 rounded-lg">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-xl font-bold sba-blue-text leading-tight">National Funding</div>
+                        <div class="text-xs text-gray-600">Eligibility Resources</div>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="nav-link text-gray-700 font-medium hover:text-blue-900">Home</a>
+                    <a href="#services" class="nav-link text-gray-700 font-medium hover:text-blue-900">Services</a>
+                    <a href="#grants" class="nav-link text-gray-700 font-medium hover:text-blue-900">Grant Programs</a>
+                    <a href="#pricing" class="nav-link text-gray-700 font-medium hover:text-blue-900">Pricing</a>
+                    <a href="#contact" class="nav-link text-gray-700 font-medium hover:text-blue-900">Contact</a>
+                    <a href="#contact" class="btn-primary sba-blue text-white px-6 py-2.5 rounded-lg font-semibold">
+                        Get Started
+                    </a>
+                </div>
+                
+                <button id="menuBtn" class="lg:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobileMenu" class="mobile-menu lg:hidden pb-4">
+                <div class="flex flex-col gap-4 pt-4 border-t">
+                    <a href="#home" class="text-gray-700 font-medium hover:text-blue-900 py-2">Home</a>
+                    <a href="#services" class="text-gray-700 font-medium hover:text-blue-900 py-2">Services</a>
+                    <a href="#grants" class="text-gray-700 font-medium hover:text-blue-900 py-2">Grant Programs</a>
+                    <a href="#pricing" class="text-gray-700 font-medium hover:text-blue-900 py-2">Pricing</a>
+                    <a href="#contact" class="text-gray-700 font-medium hover:text-blue-900 py-2">Contact</a>
+                    <a href="#contact" class="btn-primary sba-blue text-white px-6 py-3 rounded-lg font-semibold text-center">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-hero text-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <div class="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <i class="fas fa-check-circle mr-2"></i>Assisting Small Businesses Nationwide
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                        Expert Guidance for Federal & State Grant Funding
+                    </h1>
+                    <p class="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
+                        Navigate complex grant applications with professional support. We help small businesses, nonprofits, and entrepreneurs access funding opportunities through SBA programs and federal grants.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="btn-primary bg-white text-blue-900 px-8 py-4 rounded-lg font-bold text-center hover:bg-gray-100">
+                            <i class="fas fa-calendar-check mr-2"></i>Schedule Consultation
+                        </a>
+                        <a href="#services" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-center hover:bg-white/10 transition">
+                            <i class="fas fa-info-circle mr-2"></i>Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                        <h3 class="text-2xl font-bold mb-6">Why Work With Us</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-4">
+                                <div class="sba-red w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-file-contract text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold mb-1">Application Expertise</div>
+                                    <div class="text-sm text-blue-100">Navigate complex federal grant requirements with professional guidance</div>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="sba-red w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-chart-line text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold mb-1">Business Plan Development</div>
+                                    <div class="text-sm text-blue-100">Create compelling, funder-ready business plans and proposals</div>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="sba-red w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-users text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold mb-1">Dedicated Support</div>
+                                    <div class="text-sm text-blue-100">One-on-one consultation throughout your funding journey</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block sba-red-text font-semibold text-sm mb-3">OUR SERVICES</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold sba-blue-text mb-6">
+                    Comprehensive Grant & Funding Assistance
+                </h2>
+                <p class="text-lg text-gray-600">
+                    From initial eligibility assessment to final submission, we provide end-to-end support for your funding applications.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="sba-blue w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-search-dollar text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold sba-blue-text mb-3">Grant Opportunity Research</h3>
+                    <p class="text-gray-600 mb-4">
+                        We identify federal, state, and local grant programs that match your business profile, industry, and funding needs.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>SBA 7(a) & 504 Loan Programs</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>SBIR/STTR Research Grants</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>State & Local Opportunities</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="sba-blue w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-edit text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold sba-blue-text mb-3">Application Writing & Review</h3>
+                    <p class="text-gray-600 mb-4">
+                        Professional writing and editing services to ensure your grant applications meet all requirements and stand out to reviewers.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Technical Writing Support</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Budget Development</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Compliance Verification</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="sba-blue w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-briefcase text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold sba-blue-text mb-3">Business Plan Development</h3>
+                    <p class="text-gray-600 mb-4">
+                        Create investor-ready business plans, financial projections, and executive summaries required for most funding applications.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Financial Projections</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Market Analysis</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Executive Summaries</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="sba-blue w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-clipboard-check text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold sba-blue-text mb-3">Eligibility Assessment</h3>
+                    <p class="text-gray-600 mb-4">
+                        Determine which funding programs you're qualified for before investing time in applications that may not be a fit.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Detailed Qualification Review</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Documentation Checklist</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Strategy Recommendations</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="sba-blue w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold sba-blue-text mb-3">Learning Platform</h3>
+                    <p class="text-gray-600 mb-4">
+                        Access our comprehensive training library with free courses on grant writing, business planning, and funding strategies.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Free Video Courses</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Templates & Resources</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Webinar Access</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gray-50 rounded-xl p-8 border border-gray-200">
+                    <div class="sba-blue w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold sba-blue-text mb-3">Ongoing Support</h3>
+                    <p class="text-gray-600 mb-4">
+                        Continue receiving guidance after submission with progress tracking, follow-up assistance, and next-step planning.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Application Tracking</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Communication Support</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check sba-red-text mt-1"></i>
+                            <span>Amendment Assistance</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grant Programs Section -->
+    <section id="grants" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block sba-red-text font-semibold text-sm mb-3">FUNDING OPPORTUNITIES</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold sba-blue-text mb-6">
+                    Popular Grant & Loan Programs
+                </h2>
+                <p class="text-lg text-gray-600">
+                    We assist with applications for these major federal and state funding programs.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-6 border-l-4 border-blue-800 shadow-sm">
+                    <h3 class="text-xl font-bold sba-blue-text mb-2">SBA 7(a) Loan Program</h3>
+                    <p class="text-gray-600 mb-3">The SBA's primary program for providing financial assistance to small businesses. Up to $5 million for various business purposes.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Working Capital</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Equipment</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Real Estate</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 border-l-4 border-blue-800 shadow-sm">
+                    <h3 class="text-xl font-bold sba-blue-text mb-2">SBIR/STTR Grants</h3>
+                    <p class="text-gray-600 mb-3">Federal research and development funding for small businesses to engage in technological innovation and commercialization.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">R&D Funding</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Tech Innovation</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Phase I & II</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 border-l-4 border-blue-800 shadow-sm">
+                    <h3 class="text-xl font-bold sba-blue-text mb-2">SBA 504 Loan Program</h3>
+                    <p class="text-gray-600 mb-3">Long-term, fixed-rate financing for major assets like real estate or equipment that promote business growth and job creation.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Real Estate</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Equipment</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Fixed Rates</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 border-l-4 border-blue-800 shadow-sm">
+                    <h3 class="text-xl font-bold sba-blue-text mb-2">State & Local Grants</h3>
+                    <p class="text-gray-600 mb-3">Various state-specific economic development grants, workforce training funds, and industry-specific funding opportunities.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Economic Development</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Job Creation</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Minority-Owned</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-block sba-red-text font-semibold text-sm mb-3">TRANSPARENT PRICING</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold sba-blue-text mb-6">
+                    Flat Consultation Fee Available
+                </h2>
+                <p class="text-lg text-gray-600">
+                    We offer transparent, flat-rate consultation pricing for grant application assistance, business plan review, and funding strategy sessions. Contact us to discuss your specific needs and receive a clear quote before we begin.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold sba-blue-text mb-4">What Our Consultation Covers</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle sba-red-text mt-1"></i>
+                            <span class="text-gray-700">Initial eligibility assessment for funding programs</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle sba-red-text mt-1"></i>
+                            <span class="text-gray-700">Grant opportunity identification and matching</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle sba-red-text mt-1"></i>
+                            <span class="text-gray-700">Application strategy and timeline development</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle sba-red-text mt-1"></i>
+                            <span class="text-gray-700">Document review and feedback sessions</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle sba-red-text mt-1"></i>
+                            <span class="text-gray-700">Business plan and budget consultation</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border-2 border-gray-200">
+                    <h3 class="text-2xl font-bold sba-blue-text mb-4">Free Educational Resources</h3>
+                    <p class="text-gray-600 mb-6">Access our Learning Platform courses which are actually free for all business owners.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-graduation-cap sba-red-text mt-1"></i>
+                            <span class="text-gray-700">Grant writing fundamentals course</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-graduation-cap sba-red-text mt-1"></i>
+                            <span class="text-gray-700">Business plan template library</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-graduation-cap sba-red-text mt-1"></i>
+                            <span class="text-gray-700">Monthly funding opportunity webinars</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-graduation-cap sba-red-text mt-1"></i>
+                            <span class="text-gray-700">Step-by-step application guides</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="inline-block sba-red-text font-semibold text-sm mb-3">GET IN TOUCH</div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold sba-blue-text mb-6">
+                        Start Your Funding Journey Today
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Flat Consultation Fee Available - Contact us for flat-rate consultation pricing on grant applications, business plans, and funding strategy. Transparent pricing with no hidden costs.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="sba-blue w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone-alt text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 mb-1">Phone</div>
+                                <a href="tel:+13322076900" class="text-gray-600 hover:sba-blue-text transition">+1 (332) 207-6900</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="sba-blue w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 mb-1">Email</div>
+                                <a href="mailto:sbagrant.gov00@gmail.com" class="text-gray-600 hover:sba-blue-text transition break-all">sbagrant.gov00@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="sba-blue w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 mb-1">Business Hours</div>
+                                <div class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM EST</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 bg-blue-50 border-l-4 border-blue-800 p-6 rounded-r-lg">
+                        <div class="flex gap-3">
+                            <i class="fas fa-info-circle sba-blue-text text-xl mt-1"></i>
+                            <div>
+                                <div class="font-bold sba-blue-text mb-2">Important Notice</div>
+                                <p class="text-sm text-gray-700">
+                                    We are an independent consulting firm and are not affiliated with the U.S. Small Business Administration (SBA) or any government agency. We provide paid professional assistance with grant research, application preparation, and business planning services.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <h3 class="text-2xl font-bold sba-blue-text mb-6">Request Consultation</h3>
+                    <form id="contactForm" class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="John Doe">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="john@example.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="(555) 123-4567">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Business Type</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                                <option>Select your business type</option>
+                                <option>Small Business</option>
+                                <option>Startup</option>
+                                <option>Non-Profit</option>
+                                <option>Existing Business Expansion</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">How Can We Help? *</label>
+                            <textarea required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Tell us about your funding needs..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full sba-blue text-white py-4 rounded-lg font-bold text-lg">
+                            Submit Request <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="sba-blue text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-white text-blue-900 p-2 rounded-lg">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-bold">National Funding</div>
+                            <div class="text-xs text-blue-200">Eligibility Resources</div>
+                        </div>
+                    <p class="text-sm text-blue-100">
+                        Professional grant consulting and business funding assistance for entrepreneurs and small businesses nationwide.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-blue-100">
+                        <li><a href="#services" class="hover:text-white transition">Our Services</a></li>
+                        <li><a href="#grants" class="hover:text-white transition">Grant Programs</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">Consultation Pricing</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact Information</h4>
+                    <ul class="space-y-2 text-sm text-blue-100">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+13322076900" class="hover:text-white transition">+1 (332) 207-6900</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:sbagrant.gov00@gmail.com" class="hover:text-white transition break-all">sbagrant.gov00@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-8 text-center text-sm text-blue-200">
+                <p>&copy; 2026 National Funding Eligibility Resources. All rights reserved.</p>
+                <p class="mt-2 text-xs">
+                    Independent consulting firm. Not affiliated with the U.S. Small Business Administration or any government agency.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/13322076900" target="_blank" class="whatsapp-float bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you within 24 hours to discuss flat-rate consultation pricing for grant assistance.');
+            e.target.reset();
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;var a=target.closest?target.closest("a[href]"):null;if(!a||!a.href||!/^https?:\/\//.test(a.href))return;if(a.href.replace(/#.*$/,"")===loc)return;var productId=extractProductId(target)||extractProductId(a);if(!productId)return;e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*")},true)})();</script></body>
+</html>
